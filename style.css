@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  background-color: #faf8f6;
+  padding: 40px 24px;
+}
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+  border: none;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+  padding: 35px 15px;
+  color: var(--light);
+  outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+  color: var(--primary);
+}
+
+.navbar.fixed-top {
+  transition: 0.5s;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-nav {
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--dark);
+  }
+
+  .navbar .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    top: 100%;
+    transform: rotateX(-75deg);
+    transform-origin: 0% 0%;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  .navbar .nav-item:hover .dropdown-menu {
+    transform: rotateX(0deg);
+    visibility: visible;
+    transition: 0.5s;
+    opacity: 1;
+  }
+}
+
+.tour {
+  width: calc(33.33% - 30px);
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  margin-top: 100px;
+}
+.tour-content {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 14px;
+}
+.tour-title {
+  margin-bottom: 10px;
+  color: #23262f;
+  font-weight: 500;
+  padding-bottom: 10px;
+
+  font-size: 18px;
+  /*line-height: 28px;*/
+  line-height: 1.556;
+}
+/* CACH LAM DAU BA CHAM TREN 1 HANG : ...
+white space: nowrap
+overflow:hidden
+text-overflow: ellipsis
+
+NEU LAM 2 HANG MOI CO DAU 3 CHAM:
+display:webkit-box
+webkit-line-clamp:1 (1 hang se co dau ...; 
+                  2 ( 2 hang se co dau ...
+webkit-box-orient:vertical
+overflow:hidden
+text-overflow: ellipsis
+word-break: break-word
+*/
+.tour-rating {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tour-review-count {
+  margin-left: 5px;
+  font-size: 14px;
+}
+.tour-duration,
+.tour-review-count {
+  font-size: 14px;
+  color: #353945;
+}
+.tour-button {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  padding: 8px 17px;
+  background-color: #1550e7;
+  text-decoration: none;
+  border-radius: 8px;
+  line-height: 17px;
+  display: inline-block;
+}
+a {
+  line-height: 1;
+}
+.tour-image {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 239px;
+  object-fit: cover;
+}
+.tour-top {
+  position: relative;
+}
+.tour-price {
+  position: absolute;
+  top: 24px;
+  left: 30px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fcfcfd;
+  background-color: rgb(53, 57, 69, 0.8);
+  padding: 5px 12px;
+  line-height: 20px;
+  border-radius: 4px;
+}
+
+.tour-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.tour-list {
+  margin-left: -30px;
+  /*tuong duong voi margin: 0 auto; tuc la tren duoi la 0, trai phai la auto*/
+  display: flex;
+
+  flex-direction: row;
+  align-items: stretch; /* lam cho cac cot cao bang nhau hoac cac cot rong bang nhau  2 dong nay mac dinh ko co cung dc ko sao 
+  mac dinh la flex-wrap: nowrap la ko bao gio rot xuong hang, muon rot xuong hang thi fai xai wrap
+  flex-start canh tren dau . flex-end canh duoi chan, flex-center canh giua */
+  flex-wrap: wrap;
+}
+.tour-top {
+  overflow: hidden;
+}
+.tour-review {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 767.98px) {
+  .tour {
+    width: 100%;
+  }
+}
